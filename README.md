@@ -24,6 +24,6 @@ The backend will respond with recipes that will look like this:
 {
   "day": "Monday",
   "meal": "Lunch",
-  "recipe": "A String that contains the recipe" // This may be changed later so that PDFs, or other media types can be included.
+  "recipe": "A String that contains the recipe. Note: This may be changed later so that PDFs, or other media types can be included."
 }
 ```
