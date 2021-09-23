@@ -12,15 +12,9 @@ import java.util.*
  * It is GOOD practice to avoid using "var"s whenever possible
  */
 data class Recipe (
+    /** Recipe ids should follow the form R_<RandomStringOfChars> */
+    val id: String,
     val name: String, // <val|var> <varName> : <Type>
-    val attributes: SortedSet<String> // val means that the variable is final. Use var for variables that need to change
-        ){
-
-    // fun <functionName> (<argumentList>): <ReturnType> {<methodBody>}
-    // the '?' after "String: means that it can be null. Without that, a variable cannot be null which means that no null check needs to be performed
-    // Look up Kotlin Null handling for more details
-    // This function can be deleted later. I'm not attached to it in any way.
-    fun hasAttribute(attribute: String?): Boolean {
-        return attributes.contains(attribute)
-    }
-}
+    val instructions: String,
+    val attributes: SortedSet<String>, // val means that the variable is final. Use var for variables that need to change
+)
