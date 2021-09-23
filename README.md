@@ -22,6 +22,7 @@ The request will be lists of these objects for each meal desired. I expect that 
 The backend will respond with recipes that will look like this:
 ```json
 {
+  "id": "R_<randomStringOfAlphaNumericaChars>"
   "day": "Monday",
   "meal": "Lunch",
   "recipe": "A String that contains the recipe. Note: This may be changed later so that PDFs, or other media types can be included."
