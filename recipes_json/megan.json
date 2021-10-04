@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Rolled Omelet",
+    "owner": "mamberly",
+    "data": 1633358557,
+    "ingredients": {
+      "eggs": "6 large",
+      "paprika": "1/8 tsp",
+      "olive oil": "2 tbsp",
+      "potato": "1 small",
+      "salt": "1 pinch",
+      "cream cheese": "6 tbsp at room temperature",
+      "red pepper": "1/2, julienned",
+      "watercress leaves": "1/2 cup"
+    },
+    "instructions": [
+      "Make the omelette: Whisk the eggs, smoked paprika and salt. Heat a 12 inch diameter nonstick skillet and spray with non-stick spray or 1 tablespoon olive oil. Pour the egg mixture into the pan and cook on medium heat till the underside of the omelette is slightly golden. Carefully flip the omelette over and cook the other side till done. Using a large spatula, trasfer the omelette to a large sheet of cling film. Let omelette cool completely.",
+      "Make the potatoes: While omelette is cooling, make the smoky potatoes.  Scrub the potato clean. Leave skin on. Cut the potato into batons. Heat olive oil in a pan and add the potato sticks in a single layer. Fry the potatoes till golden. Remove cooked potatoes onto a paper towel and sprinkle with smoked paprika and salt.",
+      "Make the rollup: When the omelette is completely cool. Spread the cream cheese over the omelette. Then arrange the water cress leaves in a single layer. Place the pepper juliennes and smoky potato sticks over the watercress layer. Make sure the peppers and potato only form a single layer. Gently roll omlette. Wrap the omlette roll in cling film, gently but firmly. Place the package in the fridge for 30 minutes. Then cut into pinwheel pieces."
+    ],
+    "tags": [
+      "breakfast",
+      "ovenless",
+      "vegetarian",
+      "healthy"
+    ],
+    "serving size": null,
+    "calories": null,
+    "macronutrients": null,
+    "rating": 4.5
+  },
+  {
+    "name": "Chicken and Rice Casserole",
+    "owner": "mamberly",
+    "data": 1633358557,
+    "ingredients": {
+      "chicken breasts, cut into cubes": "3",
+      "water": "2 cups",
+      "instant white rice": "2 cups",
+      "cream of chicken soup": "10.75 oz/ 1 can",
+      "cream of celery soup": "10.75 oz/ 1 can",
+      "cream of mushroom soup": "10.75 oz / 1 can",
+      "salt and pepper": "a pinch"
+    },
+    "instructions": [
+      "Preheat oven to 400 degrees F (200 degrees C). Grease sides and bottom of a casserole dish.  ",
+      "Stir chicken, water, rice, cream of chicken soup, cream of celery soup, and cream of mushroom soup together in the prepared casserole dish; season with salt and pepper.",
+      " Bake in preheated oven until the rice is tender and the chicken is cooked through, 1 hour to 75 minutes. Cool 15 minutes before serving.  "
+    ],
+    "tags": [
+      "dinner",
+      "lunch",
+      "casserole",
+      "family friendly"
+    ],
+    "serving size": 6,
+    "calories": 441,
+    "macronutrients": {
+      "protien": "16.8g",
+      "carbohydrates": "36.7g",
+      "fat": "25g",
+      "cholesterol": "80.7mg",
+      "sodium": "1211.2mg"
+    },
+    "rating": 4.3
+  },
+  {
+    "name": "Chicken Tostadas",
+    "owner": "mamberly",
+    "data": 1633358557,
+    "ingredients": {
+      "corn tortillas or tostada shells": "8",
+      "medium diced tomatoes": "3",
+      "medium diced avocados": "4",
+      "red onion, finely chopped": "3 tbsp",
+      "cilantro, finely chopped": "1/4 cup",
+      "cumin": "1 tsp",
+      "chili powder": "1 tsp",
+      "salt": "3/4 tsp",
+      "lime": "juice of",
+      "black beans, drained and rinsed": "15 oz/1 can",
+      "shredded chicken": "3 cups",
+      "feta or cotija cheese": "1/2 cup"
+    },
+    "instructions": [
+      "1. To make tostada shells, line large baking sheet with silicone mat and arrange tortillas in a single layer. Spray with cooking spray and sprinkle with salt on both sides. Bake at 400 degrees for 6 minutes per each side.",
+      "2. While tostadas are baking, make easy guacamole salsa by combining tomato, avocado, red onion, cilantro, cumin, chili powder, salt and lime juice. Get other ingredients ready.",
+      "3. To assemble tostadas, top each shell with guacamole salsa, beans, chicken and cheese."
+    ],
+    "tags": [
+      "dinner",
+      "ovenless",
+      "vegetarian",
+      "mexican",
+      "party favorite"
+    ],
+    "serving size": 4,
+    "calories": null,
+    "macronutrients": null,
+    "rating": 4.99
+  }
+]
