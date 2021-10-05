@@ -13,33 +13,17 @@ data class Recipe (
     val owner: String,
     /** date the recipe was put into the db */
     val date: Long,
-    val ingredients: Map<String, Amount>,
+    /** ingredientName to amount */
+    val ingredients: Map<String, String>,
     val instructions: List<String>,
     val tags: SortedSet<String>, 
     /** Number of people this recipe can serve */
-    val servingsProduced: Number,
+    val servingsProduced: Number?,
     /** calories per serving */
     val calories: Number?,
-    val macronutrients: Map<Macronutrient, Amount>?,
-    val rating: Number,
+    val macronutrients: Map<Macronutrient, Number>?,
+    val rating: Number?,
 )
-
-data class Amount (
-    val amount: Number,
-    val unit: Unit,
-        )
-
-enum class Unit {
-    GRAMS,
-    MG,
-    LITERS,
-    ML,
-    CUPS,
-    TSP,
-    TBSP,
-    OZ,
-    // TODO add more as needed
-}
 
 enum class Macronutrient {
     FAT,
