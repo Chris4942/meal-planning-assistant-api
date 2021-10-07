@@ -1,8 +1,9 @@
 [
   {
+    "id": "",
     "name": "Rolled Omelet",
     "owner": "mamberly",
-    "data": 1633358557,
+    "date": 1633358557,
     "ingredients": {
       "eggs": "6 large",
       "paprika": "1/8 tsp",
@@ -24,15 +25,16 @@
       "vegetarian",
       "healthy"
     ],
-    "serving size": null,
+    "servingsProduced": null,
     "calories": null,
     "macronutrients": null,
     "rating": 4.5
   },
   {
+    "id": "",
     "name": "Chicken and Rice Casserole",
     "owner": "mamberly",
-    "data": 1633358557,
+    "date": 1633358557,
     "ingredients": {
       "chicken breasts, cut into cubes": "3",
       "water": "2 cups",
@@ -53,7 +55,7 @@
       "casserole",
       "family friendly"
     ],
-    "serving size": 6,
+    "servingsProduced": 6,
     "calories": 441,
     "macronutrients": {
       "protien": "16.8g",
@@ -65,9 +67,10 @@
     "rating": 4.3
   },
   {
+    "id": "",
     "name": "Chicken Tostadas",
     "owner": "mamberly",
-    "data": 1633358557,
+    "date": 1633358557,
     "ingredients": {
       "corn tortillas or tostada shells": "8",
       "medium diced tomatoes": "3",
@@ -94,7 +97,7 @@
       "mexican",
       "party favorite"
     ],
-    "serving size": 4,
+    "servingsProduced": 4,
     "calories": null,
     "macronutrients": null,
     "rating": 4.99

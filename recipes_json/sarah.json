@@ -1,79 +1,104 @@
-{
-  "name": "Breakfast Casserole",
-  "owner": "sben502",
-  "date": 1633024149,
-  "ingredients": [
-    	"1 tsp butter ",
-    	"2 chopped onions"
-    	"7 cups frozen hashbrowns",
-    	"1 tsp salt",
-    	"1 tsp dry mustard",
-    	"1/2 tsp garlic salt",
-    	"1/2 tsp black pepper ",
-    	"8 slightly beaten eggs",
-    	"1.5 cups milk",
-    	"1 pinch dried parsley",
-    	"2 cups shredded sharp cheddar cheese"
+[
+  {
+    "id": "",
+    "name": "Breakfast Casserole",
+    "owner": "sben502",
+    "date": 1633024149,
+    "ingredients": {
+      "butter": "1 tsp",
+      "onions": "2 chopped"
+      "frozen hashbrowns": "7 cups",
+      "salt": "1 tsp",
+      "dry mustard": "1 tsp",
+      "garlic salt": "1/2 tsp",
+      "black pepper": "1/2 tsp",
+      "eggs": "8 slightly beaten",
+      "milk": "1 1/2 cups",
+      "dried parsley": "1 pinch",
+      "cheese": "2 cups of shredded sharp cheddar"
+    },
+    "instructions": [
+      "Prep: Heat oven to 400 degrees. Grease 9x13 casserole dish.",
+      "In skillet, melt butter and cook onions and mushrooms until tender; allow to cool slightly.",
+      "Place potatoes in large bowl",
+      "Combine eggs with milk, parsley, salt, garlic salt and pepper. Pour over potatoes.",
+      "Add onions, mushrooms and grated cheese. Mix and pour into casserole dish. Top with more cheese, if desired.",
+      "Note: Can be covered and refrigerated overnight.",
+      "Bake 1+ hours until set."
     ],
-  "instructions": "Heat oven to 400 degrees. Grease 9x13 casserole dish. In skillet, melt butter and cook onions and mushrooms until tender; allow to cool slightly. Place potatoes in large bowl. Combine eggs with milk, parsley, salt, garlic salt and pepper. Pour over potatoes. Add onions, mushrooms and grated cheese. Mix and pour into casserole dish. Top with more cheese, if desired. Can be covered and refrigerated overnight. Bake 1+ hours until set.",
-  "tags": [
-    "oven",
-    "meatless",
-    "breakfast",
-    "dinner"
+    "tags": [
+      "oven",
+      "meatless",
+      "breakfast",
+      "dinner"
     ] ,
-  "Calorie_count":  Null,
-  "macronutrients": Null,
-  "rating": Null
-}
-
-{
-"name": "Seven Layer Dip",
-"owner": "sben502",
-"date": 1633024552,
-"ingredients": [
-    "1 rotisserie chicken",
-    "1 pkg McCormick's Mesquite Marinade mix",
-    "sour cream",
-    "chopped tomatoes",
-    "chopped olives",
-    "1 can refried beans",
-    "grated cheese",
-    "guacamole dip",
-    "chopped green chilies",
-    "tortilla chips"
-  ],
-"instructions": "Debone chicken and chop. Mix marinade according to package directions. Combine chicken with 1⁄2 of marinade and black beans. Spread in bottom of pan or plate. Layer sour cream, guacamole dip, cheese, tomatoes, olives and green chilies. Serve with tortilla chips.",
-"tags": [
-  "ovenless",
-  "chicken",
-  "lunch",
-  "dinner",
-  "snack"
-  ] ,
-"Calorie_count":  Null,
-"macronutrients": Null,
-"rating": Null
-}
-
-{
-"name": "Crockpot Chicken",
-"owner": "sben502",
-"date": 1633024838,
-"ingredients": [
-    "1.5 lbs chicken",
-    "3 cans Cream of Chicken soup",
-    "1 package of italian dressing",
-    "8 oz cream cheese"
-  ],
-"instructions": "put 1/2 the chicken in crockpot, cover with 1/2 the soup. sprinkle 1/2 of the italian dressing on top. repeat with the rest of the chicken, soup and dressing. cube cream cheese and sprinkle on top. cook on low for 4-5 hours or high for 2-3 hours or until chicken is thoroughly cooked.",
-"tags": [
-  "ovenless",
-  "crockpot",
-  "chicken",
-  "dinner"
-  ] ,
-"Calorie_count":  Null,
-"macronutrients": Null,
-"rating": Null
-}
+    "servingsProduced": 12,
+    "calories":  null,
+    "macronutrients": null,
+    "rating": null
+  },
+  {
+    "id": "",
+    "name": "Seven Layer Dip",
+    "owner": "sben502",
+    "date": 1633024552,
+    "ingredients": {
+      "chicken": "1 rotisserie",
+      "McCormick's Mesquite Marinade mix": "1 pkg",
+      "sour cream": "",
+      "chopped tomatoes": "",
+      "chopped olives": "",
+      "refried beans": "1 can",
+      "grated cheese": "",
+      "guacamole dip": "",
+      "chopped green chilies": "",
+      "tortilla chips": ""
+    },
+    "instructions": [
+      "Debone chicken and chop.",
+      "Mix marinade according to package directions.",
+      "Combine chicken with 1⁄2 of marinade and black beans. Spread in bottom of pan or plate.",
+      "Layer sour cream, guacamole dip, cheese, tomatoes, olives and green chilies.",
+      "Serve with tortilla chips."
+    ],
+    "tags": [
+      "ovenless",
+      "chicken",
+      "lunch",
+      "dinner",
+      "snack"
+    ],
+    "servingsProduced": null,
+    "calories":  null,
+    "macronutrients": null,
+    "rating": 5
+  },
+  {
+    "id": "",
+    "name": "Crockpot Chicken",
+    "owner": "sben502",
+    "date": 1633024838,
+    "ingredients": {
+      "chicken": "1.5 lbs",
+      "Cream of Chicken soup": "3 cans",
+      "italian dressing": "1 package",
+      "cream cheese": "8 oz"
+    },
+    "instructions": [
+      "Put 1/2 the chicken in crockpot, cover with 1/2 the soup and sprinkle 1/2 of the italian dressing on top.",
+      "Repeat with the rest of the chicken, soup and dressing. ",
+      "Cube cream cheese and sprinkle on top.",
+      "Cook on low for 4-5 hours or high for 2-3 hours or until chicken is thoroughly cooked."
+    ],
+    "tags": [
+      "ovenless",
+      "crockpot",
+      "chicken",
+      "dinner"
+    ] ,
+    "servingsProduced": null,
+    "calories":  null,
+    "macronutrients": null,
+    "rating": 4.9
+  }
+]
