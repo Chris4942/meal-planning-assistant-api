@@ -11,7 +11,7 @@ data class Recipe (
     val name: String,
     /** Refers to a username */
     val owner: String,
-    /** date the recipe was put into the db */
+    /** date the recipe was put into the db. Intended to be used for prioritizing more recent recipes */
     val date: Long,
     /** ingredientName to amount */
     val ingredients: Map<String, String>,
@@ -22,6 +22,7 @@ data class Recipe (
     /** calories per serving */
     val calories: Number?,
     val macronutrients: Map<Macronutrient, Number>?,
+    /** number between 1 and 5 inclusive. includes decimals */
     val rating: Number?,
 )
 
