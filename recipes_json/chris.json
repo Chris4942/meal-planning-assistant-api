@@ -1,0 +1,31 @@
+[
+  {
+    "id": "",
+    "name" : "Chicken and Swiss Stuffing Bake",
+    "owner": "Chris494",
+    "date" : 1633978207205,
+    "ingredients": {
+      "condensed cream of mushroom soup": "1 can",
+      "milk": "1 cup",
+      "stuffing mix": "1 package (6 oz)",
+      "Canned Chicken": "2 cans",
+      "Broccoli": "2 cups, cooked",
+      "chopped celery": "2 celery ribs",
+      "Swiss Cheese, shredded": "1-1/2 cups"
+    },
+    "instructions": [
+      "In a large bowl, combine soup and milk until blended. Add the stuffing mix with contents of seasoning packet, chicken, broccoli, celery and 1 cup cheese. Transfer to a greased 13x9-in. baking dish.",
+      "Bake, uncovered, at 375° for 20 minutes or until heated through. Sprinkle with remaining cheese; bake 5 minutes longer or until cheese is melted. Freeze option: Sprinkle remaining cheese over unbaked casserole. Cover and freeze. To use, partially thaw in refrigerator overnight Remove from refrigerator 30 minutes before baking. Preheat oven to 375°. Bake casserole as directed, increasing time as necessary to heat through and for a thermometer inserted in center to read 165°."
+    ],
+    "tags": [
+      "quick-prep",
+      "dinner",
+      "lunch",
+      "oven"
+    ],
+    "servingsProduced": 8,
+    "calories": 247,
+    "macronutrients": null,
+    "rating": 4.5
+  }
+]
