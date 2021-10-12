@@ -1,0 +1,102 @@
+[
+  {
+    "id": "",
+    "name": "Liege Waffles",
+    "owner": "rsweston",
+    "date": 1633971599424,
+    "ingredients": {
+      "instant dry yeast": "1 tbsp",
+      "granulated sugar": "1 1/2 tbsp",
+      "milk, lukewarm": "3/4 cup",
+      "eggs": "3",
+      "melted butter": "1 cup",
+      "vanilla extract": "2 tsp",
+      "all-purpose flour": "3 cups",
+      "salt": "1/2 tsp",
+      "pearl sugar": "4 oz"
+    },
+    "instructions": [
+    	"Sprinkle the yeast and the granulated sugar over the milk. Let rest for about 5 minutes so the yest can become foamy.",
+    	"Add the eggs to the bowl of a stand mixer and whisk until uniformly yellow. Add the milk/yeast mixture to the bowl and mix.",
+    	"Add the melted (and slightly cooled) butter slowly to the bowl while the whisk is still running (avoid adding super hot butter to the bowl all at once, otherwise you risk making scrambled eggs).",
+    	"Add the flour and salt and switch to the dough hook attachment on the stand mixer. Knead until dough forms, scraping down the sides and from the bottom a few times to make sure all the flour gets incorporated.",
+    	"Cover and let rise until doubled in size.",
+    	"Knead the pearl sugar into the dough by hand.",
+    	"Preheat your waffle iron and grease with nonstick cooking spray. Place a baseball-sized ball of dough on the waffle iron and cook until golden brown. Repeat with remaining dough."
+    ],
+    "tags": [
+      "breakfast",
+      "ovenless",
+      "vegetarian"
+    ],
+    "servingsProduced": null,
+    "calories": null,
+    "macronutrients": null,
+    "rating": null
+  },
+  {
+    "id": "",
+    "name": "Tomato Soup",
+    "owner": "rsweston",
+    "date": 1633971599424,
+    "ingredients": {
+      "diced tomatoes": "2 (28 oz) cans",
+      "chicken broth": "3/4 cup",
+      "butter": "3 tbsp",
+      "chopped onion": "1",
+      "bay leaf": "1",
+      "brown sugar": "1 tsp",
+      "tomato paste": "2 tbsp",
+      "all-purpose flour": "2 tbsp",
+      "baking soda": "1/2 tsp",
+      "salt and pepper": "to taste",
+      "heavy cream": "1/2 cup"
+    },
+    "instructions": [
+      "Drain tomatoes over large bowl. Transfer tomato juice and chicken broth to large measuring cup (mixture should measure about 4 cups); reserve.",
+      "Melt butter over medium heat. Add onion and cook until softened, about 5 minutes. Add two-thirds of drained tomatoes, bay leaf, and brown sugar and cook, stirring occasionally until tomatoes begin to brown, about 15 minutes.",
+      "Add tomato paste and flour to pot and cook, stirring frequently, until paste begins to darken, 1–2 minutes. Slowly stir in reserved tomato juice/broth mixture, remaining tomatoes, baking soda, and 1/2 tsp salt and bring to boil. Reduce heat to medium-low and simmer until slightly thickened, about 5 minutes. Remove from heat.",
+      "Discard bay leaf. Puree soup in batches, Return pureed soup to pot and stir in cream. Season with salt and pepper. Serve."
+    ],
+    "tags": [
+      "lunch",
+      "vegetarian",
+      "ovenless",
+      "stovetop"
+    ],
+    "servingsProduced": null,
+    "calories": null,
+    "macronutrients": null,
+    "rating": null
+  },
+  {
+    "id": "",
+    "name": "Spaghetti Casserole",
+    "owner": "rsweston",
+    "date": 1633971599424,
+    "ingredients": {
+      "spaghetti": "1 lb",
+      "eggs": "4",
+      "fresh parsely, chopped": "1/4 cup",
+      "parmesan cheese": "1/2 cup",
+      "butter": "1/2 cup",
+      "cottage cheese": "16 oz",
+      "cream cheese": "8 oz",
+      "ground beef, browned": "1 pound",
+      "spaghetti sauce": "4–5 cups",
+      "cream": "1/4 cup",
+      "mozzarella cheese": "3 cups"
+    },
+    "instructions": [
+      "Preheat oven to 350. Lightly grease 9x13 baking dish. Cook spaghetti to al dente as directed on package. In bowl, whisk together eggs, parsely, and parmesan. Drain spaghetti then put right back into hot pot. Add butter and egg mixture to spaghetti and quickly toss until evenly coated. Pour this mixture into baking dish, spreading evenly. Add cottage cheese and cream cheese to pot now and mix until combined. Spread this mixture over top of spaghetti. Add hamburger and cream to sauce, mixing well, then spread over top of cheeses. Add mozzarella cheese over top of sauce. Place baking dish on cookie sheet. Back for 30–45 minutes, until browned on top."
+    ],
+    "tags": [
+      "dinner",
+      "oven"
+    ],
+    "servingsProduced": null,
+    "calories": null,
+    "macronutrients": null,
+    "rating": null
+  }
+]
