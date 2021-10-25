@@ -1,8 +1,7 @@
 package edu.byu.mealplanningassistant
 
-import edu.byu.mealplanningassistant.Database.DBManager
+import edu.byu.mealplanningassistant.database.RecipeDAO
 import edu.byu.mealplanningassistant.models.Recipe
-import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
@@ -13,7 +12,7 @@ fun main() {
 }
 
 fun addTestToDB(){
-    val db = DBManager()
+    val db = RecipeDAO()
     val ingr = HashMap<String, String>()
     ingr["chicken"] = "10 grams"
     val instr = listOf("cook chicken", "serve chicken")
