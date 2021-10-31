@@ -1,4 +1,4 @@
-package edu.byu.mealplanningassistant.database
+package edu.byu.mealplanningassistant.Database
 
 import com.mongodb.*
 import com.mongodb.client.MongoDatabase
@@ -6,6 +6,7 @@ import edu.byu.mealplanningassistant.models.Recipe
 import org.bson.Document
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.data.mongodb.MongoDbFactory
 import org.springframework.data.mongodb.core.MongoTemplate
 import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory
 
@@ -22,7 +23,7 @@ class MongoDBConfig {
         get() = "myMongoDB"
 
     @Bean
-    fun mongoClient(): MongoClient {
+    fun mongoClient(): com.mongodb.MongoClient {
         val address = ServerAddress("127.0.0.1", 27017)
         val credential = MongoCredential.createCredential(
             "mdbUser",
@@ -34,8 +35,7 @@ class MongoDBConfig {
 
     @Bean
     fun mongoDbFactory(): SimpleMongoClientDatabaseFactory {
-//        return SimpleMongoClientDatabaseFactory(mongoClient(), databaseName)
-        TODO("This throws a not implemented function when it is called but it allows the build to pass")
+        return SimpleMongoClientDatabaseFactory(mongoClient(), databaseName)
     }
 
     @Bean
@@ -44,13 +44,13 @@ class MongoDBConfig {
     }
 }
 
-open class RecipeDAO{
-    private fun getDatabase() : MongoDatabase{
+class DBManager{
+    fun getDatabase() : MongoDatabase{
         val mongoClient = MongoClient("localhost")
         return mongoClient.getDatabase("mealManager")
     }
 
-    open fun addRecipe(newRecipe: Recipe){
+    fun addRecipe(newRecipe: Recipe){
         try {
             val collection = getDatabase().getCollection("recipes")
             val document = Document("_id", newRecipe.id)
@@ -77,8 +77,7 @@ open class RecipeDAO{
             println(iter.next())
         }
         val client = MongoClient("localhost")
-//        val mongoTemplate = MongoTemplate(client, "mealManager")
-//        val entities =
-        TODO("If this function is called it will throw a not implemented error")
+        val mongoTemplate = MongoTemplate(client, "mealManager")
+        val entities = MongoTemplate
     }
 }

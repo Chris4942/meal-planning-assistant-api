@@ -22,7 +22,7 @@ data class Recipe (
     /** ingredientName to amount */
     val ingredients: Map<String, String>,
     val instructions: List<String>,
-    val tags: Set<String>,
+    val tags: HashSet<String>,
     /** Number of people this recipe can serve */
     val servingsProduced: Number?,
     /** calories per serving */
