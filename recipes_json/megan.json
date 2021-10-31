@@ -1,6 +1,5 @@
 [
   {
-    "id": "",
     "name": "Rolled Omelet",
     "owner": "mamberly",
     "date": 1633358557,
@@ -25,13 +24,12 @@
       "vegetarian",
       "healthy"
     ],
-    "servingsProduced": null,
+    "servings": null,
     "calories": null,
     "macronutrients": null,
     "rating": 4.5
   },
   {
-    "id": "",
     "name": "Chicken and Rice Casserole",
     "owner": "mamberly",
     "date": 1633358557,
@@ -45,9 +43,9 @@
       "salt and pepper": "a pinch"
     },
     "instructions": [
-      "Preheat oven to 400 degrees F (200 degrees C). Grease sides and bottom of a casserole dish.  ",
+      "Preheat oven to 400 degrees F (200 degrees C). Grease sides and bottom of a casserole dish.",
       "Stir chicken, water, rice, cream of chicken soup, cream of celery soup, and cream of mushroom soup together in the prepared casserole dish; season with salt and pepper.",
-      " Bake in preheated oven until the rice is tender and the chicken is cooked through, 1 hour to 75 minutes. Cool 15 minutes before serving.  "
+      "Bake in preheated oven until the rice is tender and the chicken is cooked through, 1 hour to 75 minutes. Cool 15 minutes before serving."
     ],
     "tags": [
       "dinner",
@@ -55,19 +53,11 @@
       "casserole",
       "family friendly"
     ],
-    "servingsProduced": 6,
+    "servings": 6,
     "calories": 441,
-    "macronutrients": {
-      "protien": "16.8g",
-      "carbohydrates": "36.7g",
-      "fat": "25g",
-      "cholesterol": "80.7mg",
-      "sodium": "1211.2mg"
-    },
     "rating": 4.3
   },
   {
-    "id": "",
     "name": "Chicken Tostadas",
     "owner": "mamberly",
     "date": 1633358557,
@@ -97,7 +87,7 @@
       "mexican",
       "party favorite"
     ],
-    "servingsProduced": 4,
+    "servings": 4,
     "calories": null,
     "macronutrients": null,
     "rating": 4.99
