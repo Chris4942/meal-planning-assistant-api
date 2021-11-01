@@ -1,50 +1,14 @@
 package edu.byu.mealplanningassistant.database
 
 import com.mongodb.*
-import com.mongodb.client.MongoClients
-import com.mongodb.client.MongoClient
 import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.Filters.*
 import edu.byu.mealplanningassistant.models.Macronutrient
 import edu.byu.mealplanningassistant.models.Recipe
 import org.bson.Document
-import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
-import org.springframework.data.mongodb.core.MongoTemplate
-import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 import java.util.*
-import javax.crypto.Mac
-import javax.print.Doc
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
-
-
-@Configuration
-@EnableMongoRepositories(basePackages = ["com.concretepage.repository"])
-class MongoDBConfig {
-    val databaseName: String
-        get() = "mealManager"
-
-    @Bean
-    fun mongoClient(): MongoClient {
-        val connectionString = ConnectionString("mongodb://localhost:27017/mealManager")
-        val mongoClientSettings = MongoClientSettings.builder()
-            .applyConnectionString(connectionString)
-            .build()
-        return MongoClients.create(mongoClientSettings)
-    }
-
-    @Bean
-    fun mongoDbFactory(): SimpleMongoClientDatabaseFactory {
-       return SimpleMongoClientDatabaseFactory(mongoClient(), databaseName)
-    }
-
-    @Bean
-    fun mongoTemplate(): MongoTemplate {
-        return MongoTemplate(mongoDbFactory())
-    }
-}
 
 open class RecipeDAO{
     private fun getDatabase() : MongoDatabase{
