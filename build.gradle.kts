@@ -24,6 +24,8 @@ dependencies {
     implementation("org.springframework.data:spring-data-mongodb:3.2.5")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito:mockito-all:1.10.19")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+
 }
 
 tasks.test {

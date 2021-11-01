@@ -8,7 +8,7 @@ import kotlin.collections.HashSet
 // When this is compiled, this will be put into a class so that it can run on the JVM
 fun main() {
     println("This will be the main entry point to the api.")
-    addTestToDB()
+//    addTestToDB()
 }
 
 fun addTestToDB(){
@@ -19,10 +19,18 @@ fun addTestToDB(){
     val tags = HashSet<String>()
     tags.add("meat")
     tags.add("quick")
-
-    val rec = Recipe("1", "new recipe", "Tony", 10000, ingr, instr,
+//    tags.add("billy")
+    val rec1 = Recipe("1", "new recipe", "Tony", 10000, ingr, instr,
         tags, null, null, null, null)
-    db.addRecipe(rec)
+    val rec2 = Recipe("2", "new recipe2", "Tony", 10000, ingr, instr,
+        tags, null, null, null, null)
+    val rec3 = Recipe("3", "new recipe", "Bill", 10000, ingr, instr,
+        tags, null, null, null, null)
+//    db.addRecipe(rec1)
+//    db.addRecipe(rec2)
+//    db.addRecipe(rec3)
 //    tags.remove("quick")
-    db.getRecipeTag(tags)
+    print(db.getRecipesWithTags(tags))
+//    db.clearDatabase()
+//    db.deleteFromFieldOnValue("owner", "Tony")
 }
