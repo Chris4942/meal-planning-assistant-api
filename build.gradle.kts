@@ -26,6 +26,8 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.8")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.mongodb:mongo-java-driver:3.12.10")
 }
 
 tasks.test {

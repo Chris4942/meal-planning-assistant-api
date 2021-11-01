@@ -19,12 +19,12 @@ class RecipeResource(val service: RecipeService) {
 	@GetMapping
 	fun index(): List<Recipe> = service.findRecipes()
 
-	@PostMapping
+	@PostMapping("/recipe")
 	fun post(@RequestBody recipe: Recipe) {
 		service.post(recipe)
 	}
 
-	@PatchMapping
+	@PatchMapping("/meal-plan")
 	fun patch(@RequestBody request: GetRandomizedRecipeBatchRequest){
 		//return service.mealPlanRequest(request)
 		TODO("Implement")
