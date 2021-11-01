@@ -1,6 +1,5 @@
 [
   {
-    "id": "",
     "name": "Liege Waffles",
     "owner": "rsweston",
     "date": 1633971599424,
@@ -29,13 +28,12 @@
       "ovenless",
       "vegetarian"
     ],
-    "servingsProduced": null,
+    "servings": null,
     "calories": null,
     "macronutrients": null,
     "rating": null
   },
   {
-    "id": "",
     "name": "Tomato Soup",
     "owner": "rsweston",
     "date": 1633971599424,
@@ -64,13 +62,12 @@
       "ovenless",
       "stovetop"
     ],
-    "servingsProduced": null,
+    "servings": null,
     "calories": null,
     "macronutrients": null,
     "rating": null
   },
   {
-    "id": "",
     "name": "Spaghetti Casserole",
     "owner": "rsweston",
     "date": 1633971599424,
@@ -94,7 +91,7 @@
       "dinner",
       "oven"
     ],
-    "servingsProduced": null,
+    "servings": null,
     "calories": null,
     "macronutrients": null,
     "rating": null
