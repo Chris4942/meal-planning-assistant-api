@@ -39,5 +39,5 @@ class RecipeResource(val service: RecipeService) {
 	@PatchMapping("/meal-plan")
 	fun getMealPlan(@RequestBody request: GetRandomizedRecipeBatchRequest) : GetRandomizedRecipeBatchResponse {
 		return service.mealPlanRequest(request)
-	}
+  }
 }
