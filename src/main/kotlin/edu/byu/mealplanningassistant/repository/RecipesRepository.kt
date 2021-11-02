@@ -53,7 +53,7 @@ class RecipesRepository{
         }
     }
 
-    fun getRecipesWithTags(tagSet: HashSet<String>) : List<Recipe>{
+    fun getRecipesWithTags(tagSet: HashSet<String>, mealType: String) : List<Recipe>{
         val filter = `all`("tags", tagSet)
         return getFromDB(filter)
     }
