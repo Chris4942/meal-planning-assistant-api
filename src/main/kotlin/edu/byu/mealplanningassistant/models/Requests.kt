@@ -36,7 +36,9 @@ class GetRandomizedRecipeRequest(
 )
 
 class GetRandomizedRecipeBatchResponse (
-    val recipes: List<Recipe>,
+    val breakfast: List<Recipe>,
+    val lunch: List<Recipe>,
+    val dinner: List<Recipe>,
     override val success: Boolean,
     override val message: String
 ) : Response(success)
