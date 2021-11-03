@@ -1,6 +1,6 @@
 package edu.byu.mealplanningassistant.models
 
-abstract class Response(
+open class Response(
     open val success: Boolean,
     open val message: String = "Unknown",
 )
