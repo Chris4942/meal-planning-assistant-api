@@ -1,12 +1,11 @@
 [
   {
-    "id": "",
     "name": "Breakfast Casserole",
     "owner": "sben502",
     "date": 1633024149,
     "ingredients": {
       "butter": "1 tsp",
-      "onions": "2 chopped"
+      "onions": "2 chopped",
       "frozen hashbrowns": "7 cups",
       "salt": "1 tsp",
       "dry mustard": "1 tsp",
@@ -32,13 +31,12 @@
       "breakfast",
       "dinner"
     ] ,
-    "servingsProduced": 12,
+    "servings": 12,
     "calories":  null,
     "macronutrients": null,
     "rating": null
   },
   {
-    "id": "",
     "name": "Seven Layer Dip",
     "owner": "sben502",
     "date": 1633024552,
@@ -68,13 +66,12 @@
       "dinner",
       "snack"
     ],
-    "servingsProduced": null,
+    "servings": null,
     "calories":  null,
     "macronutrients": null,
     "rating": 5
   },
   {
-    "id": "",
     "name": "Crockpot Chicken",
     "owner": "sben502",
     "date": 1633024838,
@@ -96,7 +93,7 @@
       "chicken",
       "dinner"
     ] ,
-    "servingsProduced": null,
+    "servings": null,
     "calories":  null,
     "macronutrients": null,
     "rating": 4.9
