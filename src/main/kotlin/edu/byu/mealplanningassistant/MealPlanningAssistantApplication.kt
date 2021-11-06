@@ -36,8 +36,11 @@ class RecipeResource(val service: RecipeService) {
 		return service.clear()
 	}
 
-	@PatchMapping("/meal-plan")
+	@GetMapping("/meal-plan")
 	fun getMealPlan(@RequestBody request: GetRandomizedRecipeBatchRequest) : GetRandomizedRecipeBatchResponse {
 		return service.mealPlanRequest(request)
-  }
+  	}
+
+	@GetMapping("/recipes")
+	fun getAllRecipes() = service.getAllRecipes()
 }

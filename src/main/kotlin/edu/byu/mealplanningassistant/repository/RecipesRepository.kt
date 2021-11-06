@@ -53,49 +53,37 @@ class RecipesRepository{
         }
     }
 
-    fun getRecipesWithTags(tagSet: HashSet<String>, mealType: String) : List<Recipe>{
-        val filter = `all`("tags", tagSet)
-        return getFromDB(filter)
-    }
+    fun getRecipesWithTags(tagSet: HashSet<String>) = getFromDB(`all`("tags", tagSet))
 
-    fun getRecipes() : List<Recipe> {
-        val filter = exists("_id")
-        return getFromDB(filter)
-    }
+    // TODO I'm not sure if this is supposed to do something different than getAllRecipes later... I don't think it's pertinent to decide this now, but should discuss and consolidate if possible later
+    fun getRecipes() = getFromDB()
 
-    private fun getFromDB(filter: Bson) : List<Recipe>{
+    private fun getFromDB(filter: Bson? = null) : List<Recipe>{
+        println("filter : $filter")
         val collection = getDatabase().getCollection("recipes")
-        val iter = collection.find(filter).iterator()
-        val recipes = Vector<Recipe>()
-        while(iter.hasNext()){
-            val curRecipe = iter.next()
-            val name = curRecipe.getString("name")
-            val owner = curRecipe.getString("owner")
-            val date =  curRecipe.getLong("date")
-            val ingredientDoc = (curRecipe["ingredients"] as Document)
-            val ingredients = ingredientDocToMap(ingredientDoc)
-            val instructions = (curRecipe["instructions"] as ArrayList<String>)
-            val tags = HashSet<String>(curRecipe["tags"] as ArrayList<String>)
-            val servings = curRecipe.getInteger("servings")
-            val calories = curRecipe.getInteger("calories")
-            val macrosDoc = curRecipe.getInteger("macronutrients")
-            var macros = HashMap<Macronutrient, Number>()
-            if (macrosDoc != null){
-                macros = macrosDocToMap((macrosDoc as Document))
-            }
-            var rating = 0.0
-            try {
-                rating = curRecipe.getDouble("rating")
-            }
-            catch (ignore: Exception){
-                //we get this error if rating is null which is okay but a double cannot be null
-                // so we just have to eat the error and say that it's rated 0
-            }
-            val recipe = Recipe(name, owner, date, ingredients, instructions as List<String>, tags,
-                servings, calories, macros, rating)
-            recipes.add(recipe)
+        val recipes = mutableListOf<Recipe>()
+        (if (filter != null) collection.find(filter).iterator() else collection.find().iterator())
+            .forEach{ curRecipe ->
+                val name = curRecipe.getString("name")
+                val owner = curRecipe.getString("owner")
+                val date =  curRecipe.getLong("date")
+                val ingredientDoc = (curRecipe["ingredients"] as Document)
+                val ingredients = ingredientDocToMap(ingredientDoc)
+                val instructions = (curRecipe["instructions"] as ArrayList<String>)
+                val tags = HashSet<String>(curRecipe["tags"] as ArrayList<String>)
+                val servings = curRecipe.getInteger("servings")
+                val calories = curRecipe.getInteger("calories")
+                val macros = curRecipe.getInteger("macronutrients").let { macrosDoc ->
+                    if (macrosDoc != null){
+                        macrosDocToMap((macrosDoc as Document))
+                    } else {
+                        emptyMap()
+                    }
+                }
+                val rating = try { curRecipe.getDouble("rating") } catch (ignore: Exception){ null }
+                val recipe = Recipe(name, owner, date, ingredients, instructions as List<String>, tags, servings, calories, macros, rating)
+                recipes.add(recipe)
         }
-
         return recipes
     }
 
@@ -118,5 +106,9 @@ class RecipesRepository{
             ingredients[nextIng.key] = (nextIng.value as String)
         }
         return ingredients
+    }
+
+    fun getAllRecipes(): List<Recipe> {
+        return getFromDB()
     }
 }
