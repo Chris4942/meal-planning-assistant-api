@@ -7,9 +7,13 @@ import edu.byu.mealplanningassistant.models.Response
 import edu.byu.mealplanningassistant.service.RecipeService
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.ComponentScan
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 import org.springframework.web.bind.annotation.*
 
 @SpringBootApplication
+@ComponentScan("edu.byu.mealplanningassistant.database") //to scan packages mentioned
+@EnableMongoRepositories("edu.byu.mealplanningassistant.database") //to activate MongoDB repositories
 class MealPlanningAssistantApplication
 
 fun main(args: Array<String>) {
@@ -20,6 +24,9 @@ fun main(args: Array<String>) {
 class RecipeResource(val service: RecipeService) {
 	@GetMapping
 	fun index(): List<Recipe> = service.findRecipes()
+
+	@GetMapping("/recipes")
+	fun getRecipes() = service.findRecipes().also { println("I ran here") }
 
 	@PostMapping("/recipe")
 	fun addRecipe(@RequestBody recipe: Recipe) : Response {

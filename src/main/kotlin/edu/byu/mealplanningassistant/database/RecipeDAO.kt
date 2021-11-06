@@ -32,8 +32,7 @@ open class RecipeDAO{
     fun addRecipe(newRecipe: Recipe){
         try {
             val collection = getDatabase().getCollection("recipes")
-            val document = Document("_id", newRecipe.id)
-                .append("name", newRecipe.name)
+            val document = Document("name", newRecipe.name)
                 .append("owner", newRecipe.owner)
                 .append("date", newRecipe.date)
                 .append("ingredients", newRecipe.ingredients)
@@ -69,8 +68,18 @@ open class RecipeDAO{
                 macros = macrosDocToMap((macrosDoc as Document))
             }
             val rating = curRecipe.getInteger("rating")
-            val recipe = Recipe(id, name, owner, date, ingredients, instructions as List<String>, tags,
-                                servings, calories, macros, rating)
+            val recipe = Recipe(
+                name,
+                owner,
+                date,
+                ingredients,
+                instructions as List<String>,
+                tags,
+                servings,
+                calories,
+                macros,
+                rating
+            )
             recipes.add(recipe)
         }
 

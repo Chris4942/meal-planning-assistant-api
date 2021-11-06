@@ -29,6 +29,7 @@ dependencies {
     testImplementation("org.mockito:mockito-all:1.10.19")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.5")
+    implementation("com.h2database:h2:1.3.148")
 }
 
 tasks.test {
