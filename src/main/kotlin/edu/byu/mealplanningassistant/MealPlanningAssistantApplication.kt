@@ -18,6 +18,7 @@ class RecipeResource(val service: RecipeService) {
 	@GetMapping
 	fun index(): List<Recipe> = service.findRecipes()
 
+	@CrossOrigin(origins = ["http://localhost:3000"])
 	@PostMapping("/recipe")
 	fun addRecipe(@RequestBody recipeRequest: CreateRecipeRequest) : Response {
 		return service.post(recipeRequest)
@@ -33,7 +34,8 @@ class RecipeResource(val service: RecipeService) {
 		return service.clear()
 	}
 
-	@GetMapping("/meal-plan")
+	@CrossOrigin(origins = ["http://localhost:3000"])
+	@PostMapping("/meal-plan")
 	fun getMealPlan(@RequestBody request: GetRandomizedRecipeBatchRequest) : GetRandomizedRecipeBatchResponse {
 		return service.mealPlanRequest(request)
   	}
