@@ -1,3 +1,7 @@
 build/
 .gradle/
 .idea/
+*.wt
+WiredTiger*
+mongod.lock
+storage.bson
