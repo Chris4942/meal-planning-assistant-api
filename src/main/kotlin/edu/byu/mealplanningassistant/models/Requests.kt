@@ -1,5 +1,7 @@
 package edu.byu.mealplanningassistant.models
 
+import java.time.Instant
+
 open class Response(
     open val success: Boolean,
     open val message: String = "Unknown",
@@ -8,14 +10,36 @@ open class Response(
 class CreateRecipeRequest (
     val name: String,
     val owner: String,
-    val ingredients: Map<String, String>,
-    val instructions: List<String>,
+    val ingredients: List<IngredientAmount>,
+    val instructions: List<Instruction>,
     val tags: List<String>,
     val servingsProduced: Number?,
     val calories: Number?,
     val macronutrients: Map<Macronutrient, Number>?,
     val rating: Number?,
-)
+) {
+    class IngredientAmount(
+        val ingredient: String,
+        val amount: String,
+    )
+
+    class Instruction (
+        val instruction: String
+    )
+
+    fun getRecipe() = Recipe(
+        name = name,
+        owner = owner,
+        ingredients = ingredients.associate { it.ingredient to it.amount },
+        instructions = instructions.map { it.instruction },
+        tags = tags.toHashSet(),
+        servings = servingsProduced,
+        calories = calories,
+        macronutrients = macronutrients,
+        rating = rating,
+        date = Instant.now().toEpochMilli(),
+    )
+}
 
 class GetRandomizedRecipeBatchRequest (
     val requests: List<GetRandomizedRecipeRequest>
