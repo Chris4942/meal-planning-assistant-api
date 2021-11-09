@@ -14,8 +14,8 @@ class RecipeService(val db: RecipesRepository) {
         return Response(true, "")
     }
 
-    fun post(recipe: Recipe): Response{
-        db.addRecipe(recipe)
+    fun post(createRecipeRequest: CreateRecipeRequest): Response{
+        db.addRecipe(createRecipeRequest.getRecipe())
         return Response(true, "")
     }
 

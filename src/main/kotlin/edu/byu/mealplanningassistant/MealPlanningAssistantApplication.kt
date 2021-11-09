@@ -1,9 +1,6 @@
 package edu.byu.mealplanningassistant
 
-import edu.byu.mealplanningassistant.models.GetRandomizedRecipeBatchRequest
-import edu.byu.mealplanningassistant.models.GetRandomizedRecipeBatchResponse
-import edu.byu.mealplanningassistant.models.Recipe
-import edu.byu.mealplanningassistant.models.Response
+import edu.byu.mealplanningassistant.models.*
 import edu.byu.mealplanningassistant.service.RecipeService
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -21,13 +18,14 @@ class RecipeResource(val service: RecipeService) {
 	@GetMapping
 	fun index(): List<Recipe> = service.findRecipes()
 
+	@CrossOrigin(origins = ["http://localhost:3000"])
 	@PostMapping("/recipe")
-	fun addRecipe(@RequestBody recipe: Recipe) : Response {
-		return service.post(recipe)
+	fun addRecipe(@RequestBody recipeRequest: CreateRecipeRequest) : Response {
+		return service.post(recipeRequest)
 	}
 
 	@PostMapping("/recipes")
-	fun addRecipes(@RequestBody recipes: List<Recipe>) : Response {
+	fun addRecipes(@RequestBody recipes: List<CreateRecipeRequest>) : Response {
 		return recipes.map{service.post(it)}[0]
 	}
 
@@ -36,7 +34,8 @@ class RecipeResource(val service: RecipeService) {
 		return service.clear()
 	}
 
-	@GetMapping("/meal-plan")
+	@CrossOrigin(origins = ["http://localhost:3000"])
+	@PostMapping("/meal-plan")
 	fun getMealPlan(@RequestBody request: GetRandomizedRecipeBatchRequest) : GetRandomizedRecipeBatchResponse {
 		return service.mealPlanRequest(request)
   	}
