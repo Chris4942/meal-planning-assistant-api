@@ -41,12 +41,20 @@ class RecipeService(val db: RecipesRepository) {
     }
 
     private fun getRecipe(meal: String, mealRecipes: MutableList<Recipe>, tags: List<String>) {
-        val recipes = db.getRecipesWithTags((tags.toHashSet() + hashSetOf(meal)) as HashSet<String>)
+        var recipes = db.getRecipesWithTags((tags.toHashSet() + hashSetOf(meal)) as HashSet<String>)
+        if (recipes.isEmpty()){
+            recipes = db.getRecipesWithTags(hashSetOf(meal))
+        }
+        var added = false
         for( recipe in recipes) {
             if (!mealRecipes.contains(recipe)) {
                 mealRecipes.add(recipe)
+                added = true
                 break //can only do this in a loop which is why we're not doing a forEach here
             }
+        }
+        if (!added){
+            mealRecipes.add(recipes[0]) // there aren't enough unique recipes for us, we'll have to duplicate
         }
     }
 

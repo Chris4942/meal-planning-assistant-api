@@ -100,8 +100,9 @@ class RecipeServiceTest {
         ))
         val service = RecipeService(repository)
         val response = service.mealPlanRequest(request)
-        assert(response.lunch.size == 1)
+        assert(response.lunch.size == 2)
         assert(response.lunch[0] == Recipes.lunch1)
+        assert(response.lunch[1] == Recipes.lunch1)
         assert(response.dinner.size == 1)
         assert(response.dinner[0] == Recipes.dinner1)
         assert(response.breakfast.size == 1)
@@ -117,6 +118,26 @@ class RecipeServiceTest {
         val request = GetRandomizedRecipeBatchRequest(listOf(
             GetRandomizedRecipeRequest("breakfast-1", listOf()),
             GetRandomizedRecipeRequest("breakfast-2", listOf())
+        ))
+        val service = RecipeService(repository)
+        val response = service.mealPlanRequest(request)
+        assert(response.breakfast.size == 2)
+        assert(response.breakfast[0] == Recipes.breakfast1)
+        assert(response.breakfast[1] == Recipes.breakfast2)
+        assert(response.lunch.isEmpty())
+        assert(response.dinner.isEmpty())
+    }
+
+    @Test
+    fun notEnoughRecipes() {
+        val repository = Mockito.mock(RecipesRepository::class.java)
+        val expTags = hashSetOf("ovenless", "easy", "under 30 minutes", "breakfast")
+        val breakfastRecipes = mutableListOf(Recipes.breakfast1, Recipes.breakfast2, Recipes.breakfast3)
+        Mockito.`when`(repository.getRecipesWithTags(expTags)).thenReturn(mutableListOf())
+        Mockito.`when`(repository.getRecipesWithTags(hashSetOf("breakfast"))).thenReturn(breakfastRecipes)
+        val request = GetRandomizedRecipeBatchRequest(listOf(
+            GetRandomizedRecipeRequest("breakfast-1", listOf("ovenless", "easy", "under 30 minutes")),
+            GetRandomizedRecipeRequest("breakfast-2", listOf("ovenless", "easy", "under 30 minutes"))
         ))
         val service = RecipeService(repository)
         val response = service.mealPlanRequest(request)
