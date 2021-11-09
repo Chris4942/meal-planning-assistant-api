@@ -20,11 +20,34 @@ class RecipeService(val db: RecipesRepository) {
     }
 
     fun mealPlanRequest(request: GetRandomizedRecipeBatchRequest) : GetRandomizedRecipeBatchResponse {
-        val breakfast = db.getRecipesWithTags((request.requests[0].tags.toHashSet() + hashSetOf("breakfast")) as HashSet<String>)
-        val lunch = db.getRecipesWithTags((request.requests[0].tags.toHashSet() + hashSetOf("lunch")) as HashSet<String>)
-        val dinner = db.getRecipesWithTags((request.requests[0].tags.toHashSet() + hashSetOf("dinner")) as HashSet<String>)
-
+        val breakfast = mutableListOf<Recipe>()
+        val lunch = mutableListOf<Recipe>()
+        val dinner = mutableListOf<Recipe>()
+        request.requests.forEach{r ->
+            if(r.mealName.startsWith("breakfast")){
+                getRecipe("breakfast", breakfast, r.tags)
+            }
+            else if(r.mealName.startsWith("lunch")){
+                getRecipe("lunch", lunch, r.tags)
+            }
+            else if(r.mealName.startsWith("dinner")){
+                getRecipe("dinner", dinner, r.tags)
+            }
+            else {
+                println("Unknown meal type " +  r.mealName)
+            }
+        }
         return GetRandomizedRecipeBatchResponse(breakfast, lunch, dinner, true, "")
+    }
+
+    private fun getRecipe(meal: String, mealRecipes: MutableList<Recipe>, tags: List<String>) {
+        val recipes = db.getRecipesWithTags((tags.toHashSet() + hashSetOf(meal)) as HashSet<String>)
+        for( recipe in recipes) {
+            if (!mealRecipes.contains(recipe)) {
+                mealRecipes.add(recipe)
+                break //can only do this in a loop which is why we're not doing a forEach here
+            }
+        }
     }
 
     fun getAllRecipes(): List<Recipe> {

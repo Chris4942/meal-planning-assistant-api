@@ -18,12 +18,15 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web:2.5.5")
+    implementation("org.springframework.boot:spring-boot-starter-web:2.5.6")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.mongodb:mongo-java-driver:3.12.10")
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.5")
+    implementation("com.google.code.gson:gson:2.8.5")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
+
 }
 
 tasks.test {
