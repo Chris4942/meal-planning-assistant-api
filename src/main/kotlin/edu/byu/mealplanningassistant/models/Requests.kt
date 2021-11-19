@@ -57,6 +57,7 @@ class GetRandomizedRecipeRequest(
      * then the backend doesn't have to care what they're called */
     val mealName: String,
     val tags : List<String>,
+    val ingredients : List<String>?,
 )
 
 class GetRandomizedRecipeBatchResponse (

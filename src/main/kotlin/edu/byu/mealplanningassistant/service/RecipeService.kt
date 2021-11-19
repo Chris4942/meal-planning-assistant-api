@@ -24,7 +24,13 @@ class RecipeService(val db: RecipesRepository) {
         val lunch = db.getRecipesWithTags((request.requests[0].tags.toHashSet() + hashSetOf("lunch")) as HashSet<String>)
         val dinner = db.getRecipesWithTags((request.requests[0].tags.toHashSet() + hashSetOf("dinner")) as HashSet<String>)
 
-        return GetRandomizedRecipeBatchResponse(breakfast, lunch, dinner, true, "")
+        val bld = listOf(breakfast, lunch, dinner).map { recipeList -> recipeList.filter { recipe ->
+            request.requests[0].ingredients?.any { requestedIngredient -> recipe.ingredients.keys.any{ recipeIngredient ->
+                recipeIngredient.contains(requestedIngredient) || requestedIngredient.contains(recipeIngredient)
+            }} ?: true
+        }}
+
+        return GetRandomizedRecipeBatchResponse(bld[0], bld[1], bld[2], true, "")
     }
 
     fun getAllRecipes(): List<Recipe> {
