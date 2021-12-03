@@ -3,6 +3,7 @@ package edu.byu.mealplanningassistant.repository
 import com.mongodb.*
 import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.Filters.*
+import com.mongodb.client.model.Sorts
 import edu.byu.mealplanningassistant.models.Macronutrient
 import edu.byu.mealplanningassistant.models.Recipe
 import org.bson.Document
@@ -53,16 +54,29 @@ class RecipesRepository{
         }
     }
 
-    fun getRecipesWithTags(tagSet: HashSet<String>) = getFromDB(`all`("tags", tagSet))
+    fun getRecipesWithTags(tagSet: HashSet<String>, sort : Boolean = false) = getFromDB(`all`("tags", tagSet), sort)
+
+    fun getRecipesWithTagsAndIngredients(tagSet: HashSet<String>, ingredientSet: HashSet<String>, sort : Boolean = false) =
+        getFromDB(and(`all`("tags", tagSet), `all`("ingredients", ingredientSet)), sort)
+
 
     // TODO I'm not sure if this is supposed to do something different than getAllRecipes later... I don't think it's pertinent to decide this now, but should discuss and consolidate if possible later
-    fun getRecipes() = getFromDB()
+    fun getRecipes() = getFromDB(null, false)
 
-    private fun getFromDB(filter: Bson? = null) : List<Recipe>{
-        println("filter : $filter")
+    private fun getQueryResults(filter: Bson? = null, sort : Boolean) : Iterator<Document>{
         val collection = getDatabase().getCollection("recipes")
+        return if(sort){
+            (if (filter != null) collection.find(filter).sort(Sorts.descending("rating")).iterator() else collection.find().sort(Sorts.descending("rating")).iterator())
+        } else{
+            (if (filter != null) collection.find(filter).sort(Sorts.descending("rating")).iterator() else collection.find().sort(Sorts.descending("rating")).iterator())
+        }
+    }
+
+    private fun getFromDB(filter: Bson? = null, sort : Boolean) : List<Recipe>{
+        println("filter : $filter")
+
         val recipes = mutableListOf<Recipe>()
-        (if (filter != null) collection.find(filter).iterator() else collection.find().iterator())
+        (getQueryResults(filter, sort))
             .forEach{ curRecipe ->
                 val name = curRecipe.getString("name")
                 val owner = curRecipe.getString("owner")
@@ -80,7 +94,7 @@ class RecipesRepository{
                         emptyMap()
                     }
                 }
-                val rating = try { curRecipe.getDouble("rating") } catch (ignore: Exception){ null }
+                val rating = try { curRecipe.getInteger("rating") } catch (ignore: Exception){ null }
                 val recipe = Recipe(name, owner, date, ingredients, instructions as List<String>, tags, servings, calories, macros, rating)
                 recipes.add(recipe)
         }
@@ -109,6 +123,6 @@ class RecipesRepository{
     }
 
     fun getAllRecipes(): List<Recipe> {
-        return getFromDB()
+        return getFromDB(null, false)
     }
 }
