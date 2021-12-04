@@ -20,42 +20,35 @@ class RecipeService(val db: RecipesRepository) {
     }
 
     fun mealPlanRequest(request: GetRandomizedRecipeBatchRequest) : GetRandomizedRecipeBatchResponse {
+        println("Start of mealPlanRequest")
         val breakfast = mutableListOf<Recipe>()
         val lunch = mutableListOf<Recipe>()
         val dinner = mutableListOf<Recipe>()
         request.requests.forEach{r ->
-            if(r.mealName.startsWith("breakfast")){
-                getRecipe("breakfast", breakfast, r.tags)
-            }
-            else if(r.mealName.startsWith("lunch")){
-                getRecipe("lunch", lunch, r.tags)
-            }
-            else if(r.mealName.startsWith("dinner")){
-                getRecipe("dinner", dinner, r.tags)
-            }
-            else {
-                println("Unknown meal type " +  r.mealName)
+            when {
+                r.mealName.startsWith("breakfast") -> getRecipe("breakfast", breakfast, r.tags, r.ingredients)
+                r.mealName.startsWith("lunch") -> getRecipe("lunch", lunch, r.tags, r.ingredients)
+                r.mealName.startsWith("dinner") -> getRecipe("dinner", dinner, r.tags, r.ingredients)
+                else -> println("Unknown meal type ${r.mealName}")
             }
         }
         return GetRandomizedRecipeBatchResponse(breakfast, lunch, dinner, true, "")
     }
 
-    private fun getRecipe(meal: String, mealRecipes: MutableList<Recipe>, tags: List<String>) {
-        var recipes = db.getRecipesWithTags((tags.toHashSet() + hashSetOf(meal)) as HashSet<String>)
+    private fun getRecipe(meal: String, mealRecipes: MutableList<Recipe>, tags: List<String>, ingredients: List<String>?) {
+        println(ingredients)
+        var recipes = if (ingredients == null)
+            db.getRecipesWithTags((tags.toHashSet() + hashSetOf(meal)) as HashSet<String>)
+        else {
+            db.getRecipesWithTagsAndIngredients(
+                (tags.toHashSet() + hashSetOf(meal)) as HashSet<String>,
+                ingredients.toHashSet()
+            )
+        }
         if (recipes.isEmpty()){
             recipes = db.getRecipesWithTags(hashSetOf(meal))
         }
-        var added = false
-        for( recipe in recipes) {
-            if (!mealRecipes.contains(recipe)) {
-                mealRecipes.add(recipe)
-                added = true
-                break //can only do this in a loop which is why we're not doing a forEach here
-            }
-        }
-        if (!added){
-            mealRecipes.add(recipes[0]) // there aren't enough unique recipes for us, we'll have to duplicate
-        }
+        recipes.find { recipe -> !mealRecipes.contains(recipe) }?.also { mealRecipes.add(it) } ?: mealRecipes.add(recipes[0])
     }
 
     fun getAllRecipes(): List<Recipe> {
