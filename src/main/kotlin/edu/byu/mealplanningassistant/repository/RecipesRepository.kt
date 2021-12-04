@@ -94,7 +94,10 @@ class RecipesRepository{
                         emptyMap()
                     }
                 }
-                val rating = try { curRecipe.getInteger("rating") } catch (ignore: Exception){ null }
+                var rating = try { curRecipe.getDouble("rating") } catch (ignore: Exception){ null }
+                if (rating == null) {
+                    rating = try { curRecipe.getInteger("rating").toDouble() } catch (ignore: Exception){ null }
+                }
                 val recipe = Recipe(name, owner, date, ingredients, instructions as List<String>, tags, servings, calories, macros, rating)
                 recipes.add(recipe)
         }
